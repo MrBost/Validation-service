@@ -1,0 +1,19 @@
+spring:
+  application:
+    name:
+      validation-service
+  config:
+    import: optional:file:.env[.properties]
+
+app:
+  version: ${APP_VERSION:v1}
+
+server:
+  port: ${SERVER_PORT:9090}
+  logging:
+    level:
+      org.springframework.data.r2dbc: Debug
+      com.ebay.validatorservice: Debug
+
+ebay:
+  specifics-url: ${EBAY_HOST:}:${EBAY_PORT:}${EBAY_CONTEXT_PATH:}
